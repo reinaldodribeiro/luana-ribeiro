@@ -70,6 +70,24 @@ export const hero = {
 
 export const manifesto = {
   line: "Defendemos quem sustenta o país com o próprio trabalho.",
+  /** Imagens ilustrativas geradas por IA, fornecidas pelo cliente; tratadas em duotone. */
+  portraits: [
+    {
+      src: "/images/quem-servidores.jpg",
+      label: "Servidores públicos",
+      alt: "Ilustração: bombeiro e professora em frente a uma escola, representando servidores públicos.",
+    },
+    {
+      src: "/images/quem-trabalhadores.jpg",
+      label: "Trabalhadores",
+      alt: "Ilustração: operário de capacete e colete em um canteiro de obras ao amanhecer.",
+    },
+    {
+      src: "/images/quem-acidentados.jpg",
+      label: "Quem sofreu acidente",
+      alt: "Ilustração: trabalhador com o braço imobilizado em frente a uma agência de previdência.",
+    },
+  ],
   audiences: [
     "Servidores públicos",
     "Trabalhadores",

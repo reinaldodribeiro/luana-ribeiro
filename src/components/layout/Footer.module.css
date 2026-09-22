@@ -17,9 +17,9 @@
   align-items: flex-start;
   gap: 1.1rem;
 }
-.name {
-  margin: 0;
-  font-size: clamp(2rem, 3vw, 2.6rem);
+.lockup {
+  width: min(72vw, 340px);
+  height: auto;
 }
 .tagline {
   margin: 0;

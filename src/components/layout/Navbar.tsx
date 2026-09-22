@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { cta, firm, links, nav } from "@/content/site";
+import Image from "next/image";
 import { WhatsAppIcon } from "@/components/ui/Icons";
 import styles from "./Navbar.module.css";
 
@@ -86,9 +87,13 @@ export function Navbar() {
     >
       <nav className={styles.nav} aria-label="Navegação principal">
         <a href="#inicio" className={styles.brand} onClick={() => setOpen(false)}>
-          <span className={styles.brandMark} aria-hidden="true">
-            L
-          </span>
+          <Image
+            src="/brand/monograma-lr.png"
+            alt=""
+            width={363}
+            height={456}
+            className={styles.brandMark}
+          />
           <span className={styles.brandText}>
             <span className={styles.brandName}>Luana Ribeiro</span>
             <span className={`mono ${styles.brandSub}`}>Advocacia</span>

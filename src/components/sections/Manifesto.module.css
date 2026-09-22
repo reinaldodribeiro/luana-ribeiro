@@ -13,6 +13,71 @@
   max-width: 20ch;
 }
 
+/* tríptico: quem o escritório defende */
+.triptych {
+  list-style: none;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--c-ink-3);
+}
+
+.img {
+  object-fit: cover;
+  /* duotone: tira a cor de banco de imagens e alinha as ilustrações ao mundo do site */
+  object-position: 50% 30%;
+  filter: grayscale(0.8) contrast(1.04) brightness(0.92);
+  transition: filter 900ms var(--ease-out);
+}
+
+.tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(21, 18, 15, 0.8) 0%, rgba(21, 18, 15, 0.08) 40%, rgba(21, 18, 15, 0) 65%),
+    linear-gradient(160deg, rgba(30, 122, 90, 0.38), rgba(30, 122, 90, 0.1) 60%, rgba(30, 122, 90, 0.26));
+  transition: opacity 900ms var(--ease-out);
+}
+
+.panel:hover .img {
+  filter: grayscale(0.2) contrast(1.02) brightness(0.96);
+}
+.panel:hover .tint {
+  opacity: 0.55;
+}
+
+.panelLabel {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+.panelIndex {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-fg);
+}
+.panelTitle {
+  font-size: clamp(1.25rem, 1.7vw, 1.6rem);
+  line-height: 1.1;
+}
+
 .rule {
   height: 1px;
   background: var(--line-strong);
@@ -43,13 +108,29 @@
 }
 
 @media (min-width: 640px) {
+  .triptych {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .audiences {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1024px) {
+  .triptych {
+    gap: 2rem;
+  }
+  .panel:nth-child(2) {
+    margin-top: 3rem;
+  }
   .audiences {
     grid-template-columns: repeat(5, auto);
     justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img,
+  .tint {
+    transition: none;
   }
 }

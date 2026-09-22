@@ -1,4 +1,5 @@
 import { cta, firm, footer, links, nav } from "@/content/site";
+import Image from "next/image";
 import { WhatsAppIcon } from "@/components/ui/Icons";
 import styles from "./Footer.module.css";
 
@@ -8,9 +9,14 @@ export function Footer() {
     <footer className={`theme-dark ${styles.footer}`}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <p className={`display ${styles.name}`}>
-            Luana <em>Ribeiro</em>
-          </p>
+          <Image
+            src="/brand/monograma-lockup.png"
+            alt={`${firm.lawyer}, Advocacia Especializada`}
+            width={1280}
+            height={714}
+            className={styles.lockup}
+            sizes="(max-width: 767px) 72vw, 340px"
+          />
           <p className={styles.tagline}>{footer.tagline}</p>
           <a
             href={links.whatsapp}
