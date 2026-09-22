@@ -1,0 +1,119 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.item {
+  border-bottom: 1px solid var(--line);
+}
+
+.heading {
+  margin: 0;
+  font: inherit;
+}
+
+.trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 2rem;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.15rem 0;
+  text-align: left;
+  transition: color 300ms var(--ease-out);
+}
+.trigger:hover .title {
+  color: var(--accent-fg);
+}
+
+.index {
+  font-size: 0.75rem;
+  color: var(--fg-dim);
+  letter-spacing: 0.08em;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  transition: color 300ms var(--ease-out);
+}
+
+.icon {
+  align-self: center;
+  justify-self: end;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--fg-dim);
+  transition:
+    transform 500ms var(--ease-out),
+    border-color 300ms var(--ease-out),
+    color 300ms var(--ease-out);
+}
+.icon svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+.item[data-open="true"] .icon {
+  transform: rotate(45deg);
+  border-color: var(--accent-fg);
+  color: var(--accent-fg);
+}
+
+.panel {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 500ms var(--ease-out);
+}
+.panel[hidden] {
+  display: grid;
+  grid-template-rows: 0fr;
+}
+.panelInner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.body {
+  margin: 0;
+  padding: 0 2.5rem 1.4rem 3.5rem;
+  color: var(--fg-dim);
+  font-size: 1rem;
+  line-height: 1.7;
+  text-wrap: pretty;
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 450ms var(--ease-out) 120ms,
+    transform 450ms var(--ease-out) 120ms;
+}
+.panel[hidden] .body {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition-delay: 0ms;
+}
+
+@media (max-width: 640px) {
+  .trigger {
+    grid-template-columns: 2rem 1fr 2rem;
+  }
+  .body {
+    padding-left: 3rem;
+    padding-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .body,
+  .icon {
+    transition: none;
+  }
+}

@@ -1,0 +1,115 @@
+.contact {
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.title {
+  margin: 0;
+}
+.intro .lede {
+  margin: 0;
+  max-width: 44ch;
+}
+.cnpj {
+  margin: 0.5rem 0 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--fg-dim);
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 1;
+  width: min(100%, 360px);
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--bg-2);
+  margin-top: 0.5rem;
+}
+.photoImg {
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+.channels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.channels li {
+  border-bottom: 1px solid var(--line);
+}
+
+.channel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+  padding: 1.4rem 0;
+  transition: padding-left 450ms var(--ease-out);
+}
+.channel:hover {
+  padding-left: 0.5rem;
+}
+.channelLabel {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-fg);
+}
+.channelValue {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 1.9vw, 1.75rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.channelAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--fg-dim);
+  transition: color 300ms var(--ease-out);
+}
+.channel:hover .channelAction {
+  color: var(--accent-fg);
+}
+.arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 450ms var(--ease-out);
+}
+.channel:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (min-width: 720px) {
+  .channel {
+    grid-template-columns: 7rem 1fr auto;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(3rem, 6vw, 7rem);
+  }
+  .intro {
+    position: sticky;
+    top: calc(var(--nav-h) + 2rem);
+  }
+}

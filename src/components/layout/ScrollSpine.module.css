@@ -1,0 +1,93 @@
+.spine {
+  display: none;
+}
+
+@media (min-width: 1180px) {
+  .spine {
+    position: fixed;
+    left: calc(var(--gutter) * 0.5);
+    top: 50%;
+    transform: translateY(-50%);
+    height: min(44vh, 360px);
+    z-index: 40;
+    display: flex;
+    align-items: stretch;
+    gap: 0.75rem;
+    pointer-events: none;
+    color: #8f877d;
+  }
+}
+
+.track {
+  position: relative;
+  width: 1px;
+  background: rgba(143, 135, 125, 0.35);
+}
+.fill {
+  position: absolute;
+  inset: 0;
+  background: #4fb08a;
+  transform: scaleY(0);
+  transform-origin: top;
+  will-change: transform;
+  transition: transform 120ms linear;
+}
+
+.dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.dot::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(143, 135, 125, 0.6);
+  transition:
+    background-color 400ms var(--ease-out),
+    transform 400ms var(--ease-out);
+}
+.dot[data-on="true"]::before {
+  background: #4fb08a;
+  transform: scale(1.4);
+}
+.dotLink {
+  pointer-events: none;
+}
+.dotLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity 400ms var(--ease-out),
+    transform 400ms var(--ease-out);
+  white-space: nowrap;
+}
+.dot[data-on="true"] .dotLabel {
+  opacity: 0.75;
+  transform: none;
+}
+@media (max-width: 1559px) {
+  .dotLabel {
+    display: none;
+  }
+}
+
+@media (max-height: 640px) {
+  .spine {
+    display: none;
+  }
+}

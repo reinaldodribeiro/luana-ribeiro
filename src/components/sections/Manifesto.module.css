@@ -1,0 +1,55 @@
+.manifesto {
+  background: var(--c-ink-2);
+  padding-block: clamp(4.5rem, 10vw, 8rem);
+}
+
+.head {
+  margin-bottom: 1.5rem;
+}
+
+.line {
+  margin: 0;
+  font-size: clamp(2.3rem, 6.2vw, 6rem);
+  max-width: 20ch;
+}
+
+.rule {
+  height: 1px;
+  background: var(--line-strong);
+  margin-block: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.audiences {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem 2.5rem;
+}
+.audiences li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+}
+.num {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-fg);
+}
+.audience {
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  color: var(--fg-dim);
+}
+
+@media (min-width: 640px) {
+  .audiences {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .audiences {
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-between;
+  }
+}
