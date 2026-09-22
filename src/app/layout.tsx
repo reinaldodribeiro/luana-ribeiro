@@ -74,6 +74,10 @@ export const metadata: Metadata = {
     },
   },
   formatDetection: { telephone: true, email: true, address: true },
+  // Token do Google Search Console (propriedade "Prefixo do URL"), definido na Vercel.
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export const viewport: Viewport = {

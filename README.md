@@ -24,7 +24,7 @@ Todo texto exibido ao visitante (título, áreas de atuação, diferenciais, con
 
 ## URL pública
 
-Canonical, Open Graph, sitemap e robots usam a variável `NEXT_PUBLIC_SITE_URL`. Copie `.env.example` para `.env` e ajuste antes do deploy. Sem a variável, o padrão é `https://luanaribeiro.adv.br`.
+Canonical, Open Graph, sitemap e robots usam a variável `NEXT_PUBLIC_SITE_URL`. Copie `.env.example` para `.env` e ajuste antes do deploy. Sem a variável, o padrão é `https://www.luanaribeiro.adv.br` (a Vercel redireciona o domínio sem `www` para esse). A variável opcional `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` recebe o token do Google Search Console e gera a tag `google-site-verification`.
 
 ## Estrutura
 

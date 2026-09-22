@@ -13,7 +13,7 @@ export function JsonLd() {
     alternateName: firm.shortName,
     url: SITE_URL,
     image: `${SITE_URL}/images/luana-ribeiro-retrato.jpg`,
-    logo: `${SITE_URL}/icon.svg`,
+    logo: `${SITE_URL}/icon.png`,
     telephone: firm.phoneE164,
     email: firm.email,
     taxID: firm.cnpj,

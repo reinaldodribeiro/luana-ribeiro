@@ -5,7 +5,7 @@
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://luanaribeiro.adv.br";
+  "https://www.luanaribeiro.adv.br";
 
 export const firm = {
   name: "Luana Sociedade Individual de Advocacia",
